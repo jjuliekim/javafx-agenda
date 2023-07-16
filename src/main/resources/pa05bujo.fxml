@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<Scene fx:id="bujoScene" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <AnchorPane prefHeight="600.0" prefWidth="1200.0">
+      <children>
+         <VBox fx:id="mainvBox" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="1200.0">
+            <children>
+               <MenuBar fx:id="menuBar" prefWidth="1200.0">
+                 <menus>
+                   <Menu mnemonicParsing="false">
+                        <graphic>
+                           <Button fx:id="openFileButton" mnemonicParsing="false" text="Open File (O)">
+                              <effect>
+                                 <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                    <color>
+                                       <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                    </color>
+                                 </InnerShadow>
+                              </effect>
+                           </Button>
+                        </graphic>
+                   </Menu>
+                   <Menu mnemonicParsing="false">
+                        <graphic>
+                           <Button fx:id="saveToFileButton" mnemonicParsing="false" text="Save File (S)">
+                              <effect>
+                                 <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                    <color>
+                                       <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                    </color>
+                                 </InnerShadow>
+                              </effect>
+                           </Button>
+                        </graphic>
+                   </Menu>
+                     <Menu mnemonicParsing="false">
+                        <graphic>
+                           <Button fx:id="newWeekButton" mnemonicParsing="false" text="New Week (N)">
+                              <effect>
+                                 <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                    <color>
+                                       <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                    </color>
+                                 </InnerShadow>
+                              </effect>
+                           </Button>
+                        </graphic>
+                     </Menu>
+                     <Menu mnemonicParsing="false">
+                        <graphic>
+                           <MenuButton mnemonicParsing="false" text="Add">
+                              <items>
+                                 <MenuItem mnemonicParsing="false">
+                                    <graphic>
+                                       <Button fx:id="addEventButton" mnemonicParsing="false" text="New Event (E)">
+                                          <effect>
+                                             <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                <color>
+                                                   <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                </color>
+                                             </InnerShadow>
+                                          </effect>
+                                       </Button>
+                                    </graphic>
+                                 </MenuItem>
+                                 <MenuItem mnemonicParsing="false">
+                                    <graphic>
+                                       <Button fx:id="addTaskButton" mnemonicParsing="false" text="New Task (T)">
+                                          <effect>
+                                             <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                <color>
+                                                   <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                </color>
+                                             </InnerShadow>
+                                          </effect>
+                                       </Button>
+                                    </graphic>
+                                 </MenuItem>
+                              </items>
+                              <effect>
+                                 <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                    <color>
+                                       <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                    </color>
+                                 </InnerShadow>
+                              </effect>
+                           </MenuButton>
+                        </graphic>
+                     </Menu>
+                     <Menu mnemonicParsing="false">
+                        <graphic>
+                           <Button fx:id="themeButton" mnemonicParsing="false" text="Color (C)">
+                              <effect>
+                                 <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                    <color>
+                                       <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                    </color>
+                                 </InnerShadow>
+                              </effect>
+                           </Button>
+                        </graphic>
+                        <accelerator>
+                           <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                        </accelerator>
+                     </Menu>
+                     <Menu mnemonicParsing="false">
+                        <graphic>
+                           <Button fx:id="fontButton" mnemonicParsing="false" text="Font (F)">
+                              <effect>
+                                 <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                    <color>
+                                       <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                    </color>
+                                 </InnerShadow>
+                              </effect>
+                           </Button>
+                        </graphic>
+                     </Menu>
+                     <Menu mnemonicParsing="false">
+                        <graphic>
+                           <Button fx:id="customThemeButton" alignment="CENTER" mnemonicParsing="false" text="Custom Theme">
+                              <effect>
+                                 <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                    <color>
+                                       <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                    </color>
+                                 </InnerShadow>
+                              </effect>
+                           </Button>
+                        </graphic>
+                     </Menu>
+                     <Menu mnemonicParsing="false">
+                        <graphic>
+                           <Button fx:id="openTemplateButton" alignment="CENTER" mnemonicParsing="false" text="Open Template">
+                              <effect>
+                                 <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                    <color>
+                                       <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                    </color>
+                                 </InnerShadow>
+                              </effect>
+                           </Button>
+                        </graphic>
+                     </Menu>
+                 </menus>
+                  <effect>
+                     <DropShadow height="10.0" radius="7.25">
+                        <color>
+                           <Color red="0.4736842215061188" green="0.4736842215061188" blue="0.4736842215061188" />
+                        </color>
+                     </DropShadow>
+                  </effect>
+               </MenuBar>
+               <HBox prefHeight="600.0" prefWidth="1200.0">
+                  <children>
+                     <ScrollPane fx:id="taskScrollPane" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="200.0">
+                       <content>
+                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="300.0">
+                              <children>
+                                 <VBox prefHeight="600.0">
+                                    <children>
+                                       <Label fx:id="tasksLabel" text="Tasks">
+                                          <font>
+                                             <Font name="System Bold" size="16.0" />
+                                          </font>
+                                          <padding>
+                                             <Insets left="5.0" />
+                                          </padding>
+                                       </Label>
+                                       <HBox prefHeight="15.0" prefWidth="200.0">
+                                          <children>
+                                             <Label text="Completed:">
+                                                <HBox.margin>
+                                                   <Insets />
+                                                </HBox.margin>
+                                             </Label>
+                                             <Label fx:id="percentTasks" alignment="CENTER">
+                                                <HBox.margin>
+                                                   <Insets left="3.0" />
+                                                </HBox.margin>
+                                             </Label>
+                                          </children>
+                                          <VBox.margin>
+                                             <Insets />
+                                          </VBox.margin>
+                                          <padding>
+                                             <Insets left="5.0" />
+                                          </padding>
+                                       </HBox>
+                                       <VBox fx:id="taskQueue" prefHeight="600.0" prefWidth="300.0" spacing="10.0">
+                                          <opaqueInsets>
+                                             <Insets />
+                                          </opaqueInsets>
+                                          <padding>
+                                             <Insets left="5.0" top="5.0" />
+                                          </padding>
+                                       </VBox>
+                                    </children>
+                                 </VBox>
+                              </children>
+                              <opaqueInsets>
+                                 <Insets />
+                              </opaqueInsets>
+                           </AnchorPane>
+                       </content>
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                        <effect>
+                           <InnerShadow height="6.0" radius="2.5" width="6.0">
+                              <color>
+                                 <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                              </color>
+                           </InnerShadow>
+                        </effect>
+                     </ScrollPane>
+                     <VBox spacing="10.0">
+                        <children>
+                           <HBox alignment="CENTER" prefHeight="52.0" prefWidth="993.0">
+                              <children>
+                                 <TextField fx:id="title" alignment="CENTER" text="Bullet Journal">
+                                    <font>
+                                       <Font name="System Bold" size="20.0" />
+                                    </font>
+                                    <effect>
+                                       <DropShadow>
+                                          <color>
+                                             <Color red="0.41960784792900085" green="0.41960784792900085" blue="0.41960784792900085" />
+                                          </color>
+                                       </DropShadow>
+                                    </effect>
+                                 </TextField>
+                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="125.0" spacing="2.0">
+                                    <children>
+                                       <Button fx:id="maxEventsButton" mnemonicParsing="false" text="Set Max # of Events">
+                                          <effect>
+                                             <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                <color>
+                                                   <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                </color>
+                                             </InnerShadow>
+                                          </effect>
+                                       </Button>
+                                       <Button fx:id="maxTasksButton" mnemonicParsing="false" text="Set Max # of Tasks">
+                                          <effect>
+                                             <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                <color>
+                                                   <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                </color>
+                                             </InnerShadow>
+                                          </effect>
+                                       </Button>
+                                    </children>
+                                    <HBox.margin>
+                                       <Insets left="80.0" />
+                                    </HBox.margin>
+                                 </VBox>
+                                 <VBox prefHeight="200.0" prefWidth="10.0">
+                                    <children>
+                                       <Label text="=">
+                                          <VBox.margin>
+                                             <Insets top="3.0" />
+                                          </VBox.margin>
+                                       </Label>
+                                       <Label text="=">
+                                          <VBox.margin>
+                                             <Insets top="8.0" />
+                                          </VBox.margin>
+                                       </Label>
+                                    </children>
+                                 </VBox>
+                                 <VBox prefHeight="200.0" prefWidth="60.0">
+                                    <children>
+                                       <Label fx:id="maxNumOfEvents" text="--">
+                                          <VBox.margin>
+                                             <Insets left="3.0" top="4.0" />
+                                          </VBox.margin>
+                                       </Label>
+                                       <Label fx:id="maxNumOfTasks" text="--">
+                                          <VBox.margin>
+                                             <Insets left="3.0" top="8.0" />
+                                          </VBox.margin>
+                                       </Label>
+                                    </children>
+                                 </VBox>
+                                 <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                          <children>
+                                             <Label text="Total Events:">
+                                                <HBox.margin>
+                                                   <Insets />
+                                                </HBox.margin>
+                                             </Label>
+                                             <Label fx:id="numOfEvents" text="0">
+                                                <HBox.margin>
+                                                   <Insets left="3.0" />
+                                                </HBox.margin>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                          <children>
+                                             <Label text="Total Tasks:">
+                                                <HBox.margin>
+                                                   <Insets />
+                                                </HBox.margin>
+                                             </Label>
+                                             <Label fx:id="numOfTasks" text="0">
+                                                <HBox.margin>
+                                                   <Insets left="3.0" />
+                                                </HBox.margin>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                              </children>
+                              <VBox.margin>
+                                 <Insets top="20.0" />
+                              </VBox.margin>
+                              <padding>
+                                 <Insets left="50.0" />
+                              </padding>
+                           </HBox>
+                           <GridPane alignment="TOP_CENTER" hgap="10.0" prefHeight="450.0" prefWidth="1000.0" vgap="2.0">
+                             <columnConstraints>
+                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                             </columnConstraints>
+                             <rowConstraints>
+                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                             </rowConstraints>
+                              <children>
+                                 <VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="220.0">
+                                    <children>
+                                       <Label fx:id="sunLabel" text="- Sunday -">
+                                          <font>
+                                             <Font name="System Bold" size="16.0" />
+                                          </font>
+                                       </Label>
+                                       <ScrollPane prefHeight="200.0" prefWidth="240.0">
+                                          <content>
+                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="400.0">
+                                                <children>
+                                                   <VBox fx:id="sundayVbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" spacing="10.0">
+                                                      <padding>
+                                                         <Insets left="5.0" top="5.0" />
+                                                      </padding>
+                                                   </VBox>
+                                                </children>
+                                             </AnchorPane>
+                                          </content>
+                                          <effect>
+                                             <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                <color>
+                                                   <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                </color>
+                                             </InnerShadow>
+                                          </effect>
+                                       </ScrollPane>
+                                       <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0">
+                                          <children>
+                                             <ProgressBar fx:id="sunProgress" prefHeight="12.0" prefWidth="200.0" progress="0.0">
+                                                <effect>
+                                                   <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                      <color>
+                                                         <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                      </color>
+                                                   </InnerShadow>
+                                                </effect>
+                                             </ProgressBar>
+                                             <Label fx:id="sunProgressLabel">
+                                                <HBox.margin>
+                                                   <Insets left="5.0" />
+                                                </HBox.margin>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                    <GridPane.margin>
+                                       <Insets />
+                                    </GridPane.margin>
+                                 </VBox>
+                                 <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label fx:id="thursLabel" text="- Thursday -">
+                                          <font>
+                                             <Font name="System Bold" size="16.0" />
+                                          </font>
+                                       </Label>
+                                       <ScrollPane prefHeight="200.0" prefWidth="240.0">
+                                          <content>
+                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="400.0">
+                                                <children>
+                                                   <VBox fx:id="thursdayVbox" prefHeight="300.0" prefWidth="400.0" spacing="10.0">
+                                                      <padding>
+                                                         <Insets left="5.0" top="5.0" />
+                                                      </padding>
+                                                   </VBox>
+                                                </children>
+                                             </AnchorPane>
+                                          </content>
+                                          <effect>
+                                             <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                <color>
+                                                   <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                </color>
+                                             </InnerShadow>
+                                          </effect>
+                                       </ScrollPane>
+                                       <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0">
+                                          <children>
+                                             <ProgressBar fx:id="thursProgress" prefHeight="12.0" prefWidth="200.0" progress="0.0">
+                                                <effect>
+                                                   <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                      <color>
+                                                         <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                      </color>
+                                                   </InnerShadow>
+                                                </effect>
+                                             </ProgressBar>
+                                             <Label fx:id="thursProgressLabel">
+                                                <HBox.margin>
+                                                   <Insets left="5.0" />
+                                                </HBox.margin>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                                 <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                                    <children>
+                                       <Label fx:id="monLabel" text="- Monday -">
+                                          <font>
+                                             <Font name="System Bold" size="16.0" />
+                                          </font>
+                                       </Label>
+                                       <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                          <content>
+                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="400.0">
+                                                <children>
+                                                   <VBox fx:id="mondayVbox" prefHeight="300.0" prefWidth="400.0" spacing="10.0">
+                                                      <padding>
+                                                         <Insets left="5.0" top="5.0" />
+                                                      </padding>
+                                                   </VBox>
+                                                </children>
+                                             </AnchorPane>
+                                          </content>
+                                          <effect>
+                                             <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                <color>
+                                                   <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                </color>
+                                             </InnerShadow>
+                                          </effect>
+                                       </ScrollPane>
+                                       <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0">
+                                          <children>
+                                             <ProgressBar fx:id="monProgress" prefHeight="12.0" prefWidth="200.0" progress="0.0">
+                                                <effect>
+                                                   <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                      <color>
+                                                         <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                      </color>
+                                                   </InnerShadow>
+                                                </effect>
+                                             </ProgressBar>
+                                             <Label fx:id="monProgressLabel">
+                                                <HBox.margin>
+                                                   <Insets left="5.0" />
+                                                </HBox.margin>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                                 <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label fx:id="friLabel" text="- Friday -">
+                                          <font>
+                                             <Font name="System Bold" size="16.0" />
+                                          </font>
+                                       </Label>
+                                       <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                          <content>
+                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="300.0">
+                                                <children>
+                                                   <VBox fx:id="fridayVbox" prefHeight="300.0" prefWidth="400.0" spacing="10.0">
+                                                      <padding>
+                                                         <Insets left="5.0" top="5.0" />
+                                                      </padding>
+                                                   </VBox>
+                                                </children>
+                                             </AnchorPane>
+                                          </content>
+                                          <effect>
+                                             <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                <color>
+                                                   <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                </color>
+                                             </InnerShadow>
+                                          </effect>
+                                       </ScrollPane>
+                                       <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0">
+                                          <children>
+                                             <ProgressBar fx:id="friProgress" prefHeight="12.0" prefWidth="200.0" progress="0.0">
+                                                <effect>
+                                                   <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                      <color>
+                                                         <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                      </color>
+                                                   </InnerShadow>
+                                                </effect>
+                                             </ProgressBar>
+                                             <Label fx:id="friProgressLabel">
+                                                <HBox.margin>
+                                                   <Insets left="5.0" />
+                                                </HBox.margin>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                                 <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+                                    <children>
+                                       <Label fx:id="tuesLabel" text="- Tuesday -">
+                                          <font>
+                                             <Font name="System Bold" size="16.0" />
+                                          </font>
+                                       </Label>
+                                       <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                          <content>
+                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="300.0">
+                                                <children>
+                                                   <VBox fx:id="tuesdayVbox" prefHeight="300.0" prefWidth="400.0" spacing="10.0">
+                                                      <padding>
+                                                         <Insets left="5.0" top="5.0" />
+                                                      </padding>
+                                                   </VBox>
+                                                </children>
+                                             </AnchorPane>
+                                          </content>
+                                          <effect>
+                                             <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                <color>
+                                                   <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                </color>
+                                             </InnerShadow>
+                                          </effect>
+                                       </ScrollPane>
+                                       <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0">
+                                          <children>
+                                             <ProgressBar fx:id="tuesProgress" prefHeight="12.0" prefWidth="200.0" progress="0.0">
+                                                <effect>
+                                                   <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                      <color>
+                                                         <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                      </color>
+                                                   </InnerShadow>
+                                                </effect>
+                                             </ProgressBar>
+                                             <Label fx:id="tuesProgressLabel">
+                                                <HBox.margin>
+                                                   <Insets left="5.0" />
+                                                </HBox.margin>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                                 <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label fx:id="satLabel" text="- Saturday -">
+                                          <font>
+                                             <Font name="System Bold" size="16.0" />
+                                          </font>
+                                       </Label>
+                                       <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                          <content>
+                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="300.0">
+                                                <children>
+                                                   <VBox fx:id="saturdayVbox" prefHeight="300.0" prefWidth="400.0" spacing="10.0">
+                                                      <padding>
+                                                         <Insets left="5.0" top="5.0" />
+                                                      </padding>
+                                                   </VBox>
+                                                </children>
+                                             </AnchorPane>
+                                          </content>
+                                          <effect>
+                                             <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                <color>
+                                                   <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                </color>
+                                             </InnerShadow>
+                                          </effect>
+                                       </ScrollPane>
+                                       <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0">
+                                          <children>
+                                             <ProgressBar fx:id="satProgress" prefHeight="12.0" prefWidth="200.0" progress="0.0">
+                                                <effect>
+                                                   <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                      <color>
+                                                         <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                      </color>
+                                                   </InnerShadow>
+                                                </effect>
+                                             </ProgressBar>
+                                             <Label fx:id="satProgressLabel">
+                                                <HBox.margin>
+                                                   <Insets left="5.0" />
+                                                </HBox.margin>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                 </VBox>
+                                 <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3">
+                                    <children>
+                                       <Label fx:id="wedsLabel" text="- Wednesday -">
+                                          <font>
+                                             <Font name="System Bold" size="16.0" />
+                                          </font>
+                                       </Label>
+                                       <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                                          <content>
+                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="300.0">
+                                                <children>
+                                                   <VBox fx:id="wednesdayVbox" prefHeight="300.0" prefWidth="400.0" spacing="10.0">
+                                                      <padding>
+                                                         <Insets left="5.0" top="5.0" />
+                                                      </padding>
+                                                   </VBox>
+                                                </children>
+                                             </AnchorPane>
+                                          </content>
+                                          <effect>
+                                             <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                <color>
+                                                   <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                </color>
+                                             </InnerShadow>
+                                          </effect>
+                                       </ScrollPane>
+                                       <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0">
+                                          <children>
+                                             <ProgressBar fx:id="wedProgress" prefHeight="12.0" prefWidth="200.0" progress="0.0">
+                                                <effect>
+                                                   <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                      <color>
+                                                         <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                      </color>
+                                                   </InnerShadow>
+                                                </effect>
+                                             </ProgressBar>
+                                             <Label fx:id="wedProgressLabel">
+                                                <HBox.margin>
+                                                   <Insets left="5.0" />
+                                                </HBox.margin>
+                                             </Label>
+                                          </children>
+                                       </HBox>
+                                    </children>
+                                    <GridPane.margin>
+                                       <Insets right="5.0" />
+                                    </GridPane.margin>
+                                 </VBox>
+                                 <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                    <children>
+                                       <Label fx:id="quotesLabel" text="Quotes &amp; Notes">
+                                          <font>
+                                             <Font name="System Bold" size="16.0" />
+                                          </font>
+                                       </Label>
+                                       <TextArea fx:id="quotesNotes" prefHeight="200.0" prefWidth="200.0">
+                                          <font>
+                                             <Font size="16.0" />
+                                          </font>
+                                          <effect>
+                                             <InnerShadow height="6.0" radius="2.5" width="6.0">
+                                                <color>
+                                                   <Color red="0.3294117748737335" green="0.32156863808631897" blue="0.32156863808631897" />
+                                                </color>
+                                             </InnerShadow>
+                                          </effect>
+                                          <VBox.margin>
+                                             <Insets right="5.0" />
+                                          </VBox.margin>
+                                       </TextArea>
+                                    </children>
+                                 </VBox>
+                              </children>
+                              <padding>
+                                 <Insets left="5.0" right="5.0" />
+                              </padding>
+                           </GridPane>
+                        </children>
+                     </VBox>
+                  </children>
+               </HBox>
+            </children>
+         </VBox>
+      </children></AnchorPane>
+</Scene>

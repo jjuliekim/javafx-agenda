@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Scene fx:id="bujoScene" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <AnchorPane prefHeight="600.0" prefWidth="1200.0">
+        <children>
+            <VBox fx:id="mainVBox" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="1200.0" spacing="10.0">
+                <children>
+                    <MenuBar fx:id="menuBar" prefWidth="1200.0">
+                        <menus>
+                            <Menu mnemonicParsing="false">
+                                <graphic>
+                                    <Button fx:id="openFileButton" mnemonicParsing="false" text="Open File" />
+                                </graphic>
+                            </Menu>
+                            <Menu mnemonicParsing="false">
+                                <graphic>
+                                    <Button fx:id="saveToFileButton" mnemonicParsing="false" text="Save to File" />
+                                </graphic>
+                            </Menu>
+                            <Menu mnemonicParsing="false">
+                                <graphic>
+                                    <Button fx:id="newWeekButton" mnemonicParsing="false" text="New Week" />
+                                </graphic>
+                            </Menu>
+                            <Menu mnemonicParsing="false">
+                                <graphic>
+                                    <MenuButton mnemonicParsing="false" text="Add">
+                                        <items>
+                                            <MenuItem mnemonicParsing="false">
+                                                <graphic>
+                                                    <Button fx:id="addEventButton" mnemonicParsing="false" text="Add Event" />
+                                                </graphic>
+                                            </MenuItem>
+                                            <MenuItem mnemonicParsing="false">
+                                                <graphic>
+                                                    <Button fx:id="addTaskButton" mnemonicParsing="false" text="Add Task" />
+                                                </graphic>
+                                            </MenuItem>
+                                        </items>
+                                    </MenuButton>
+                                </graphic>
+                            </Menu>
+                            <Menu mnemonicParsing="false">
+                                <graphic>
+                                    <Button fx:id="themeButton" mnemonicParsing="false" text="Color Theme" />
+                                </graphic>
+                                <accelerator>
+                                    <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                </accelerator>
+                            </Menu>
+                            <Menu mnemonicParsing="false">
+                                <graphic>
+                                    <Button mnemonicParsing="false" text="Some Function" />
+                                </graphic>
+                            </Menu>
+                        </menus>
+                    </MenuBar>
+                    <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1200.0">
+                        <children>
+                            <Label text="        ">
+                                <font>
+                                    <Font name="System Bold" size="16.0" />
+                                </font>
+                                <HBox.margin>
+                                    <Insets left="80.0" right="380.0" top="20.0" />
+                                </HBox.margin>
+                            </Label>
+                            <TextField alignment="CENTER" maxWidth="-Infinity" prefWidth="200.0" text="Weekly View">
+                                <font>
+                                    <Font name="System Bold" size="20.0" />
+                                </font>
+                            </TextField>
+                            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="125.0">
+                                <children>
+                                    <Button fx:id="maxEventsButton" mnemonicParsing="false" text="Set Max # of Events" />
+                                    <Button fx:id="maxTasksButton" mnemonicParsing="false" text="Set Max # of Tasks" />
+                                </children>
+                                <HBox.margin>
+                                    <Insets left="100.0" />
+                                </HBox.margin>
+                            </VBox>
+                            <VBox prefHeight="200.0" prefWidth="10.0">
+                                <children>
+                                    <Label text="=">
+                                        <VBox.margin>
+                                            <Insets top="3.0" />
+                                        </VBox.margin>
+                                    </Label>
+                                    <Label text="=">
+                                        <VBox.margin>
+                                            <Insets top="8.0" />
+                                        </VBox.margin>
+                                    </Label>
+                                </children>
+                            </VBox>
+                            <VBox prefHeight="200.0" prefWidth="60.0">
+                                <children>
+                                    <Label fx:id="maxNumOfEvents" text="--">
+                                        <VBox.margin>
+                                            <Insets left="3.0" top="3.0" />
+                                        </VBox.margin>
+                                    </Label>
+                                    <Label fx:id="maxNumOfTasks" text="--">
+                                        <VBox.margin>
+                                            <Insets left="3.0" top="8.0" />
+                                        </VBox.margin>
+                                    </Label>
+                                </children>
+                            </VBox>
+                            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+                                <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                        <children>
+                                            <Label text="Total Events:">
+                                                <HBox.margin>
+                                                    <Insets />
+                                                </HBox.margin>
+                                            </Label>
+                                            <Label fx:id="numOfEvents">
+                                                <HBox.margin>
+                                                    <Insets left="3.0" />
+                                                </HBox.margin>
+                                            </Label>
+                                        </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0">
+                                        <children>
+                                            <Label text="Total Tasks:">
+                                                <HBox.margin>
+                                                    <Insets />
+                                                </HBox.margin>
+                                            </Label>
+                                            <Label fx:id="numOfTasks">
+                                                <HBox.margin>
+                                                    <Insets left="3.0" />
+                                                </HBox.margin>
+                                            </Label>
+                                        </children>
+                                    </HBox>
+                                </children>
+                            </VBox>
+                        </children>
+                    </HBox>
+                    <HBox prefHeight="450.0" prefWidth="200.0">
+                        <children>
+                                <VBox fx:id="taskQueue" prefHeight="600.0" prefWidth="125.0">
+                                    <opaqueInsets>
+                                        <Insets />
+                                    </opaqueInsets>
+                                    <padding>
+                                        <Insets left="5.0" />
+                                    </padding>
+                        <children>
+                           <Label text="Tasks">
+                              <font>
+                                 <Font name="System Bold" size="17.0" />
+                              </font>
+                           </Label>
+                                  <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="450.0" prefWidth="125.0">
+                                      <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="100.0">
+                                              <opaqueInsets>
+                                                  <Insets />
+                                              </opaqueInsets>
+                                          </AnchorPane>
+                                      </content>
+                                  </ScrollPane>
+                        </children>
+                                </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="125.0">
+                                  <children>
+                                      <Label text="- Sunday -">
+                                          <font>
+                                              <Font name="System Bold" size="16.0" />
+                                          </font>
+                                      </Label>
+                                      <ScrollPane prefHeight="350.0" prefWidth="125.0">
+                                          <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="300.0">
+                                                  <children>
+                                                      <VBox fx:id="sundayVbox" prefHeight="250.0" prefWidth="300.0" spacing="5.0">
+                                                          <padding>
+                                                              <Insets left="5.0" />
+                                                          </padding>
+                                                      </VBox>
+                                                  </children>
+                                              </AnchorPane>
+                                          </content>
+                                      </ScrollPane>
+                                        <ProgressBar fx:id="sunProgress" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
+                                        <Label fx:id="sunProgressLabel" text="-- tasks remaining" />
+                                  </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="125.0">
+                                  <children>
+                                      <Label text="- Monday -">
+                                          <font>
+                                              <Font name="System Bold" size="16.0" />
+                                          </font>
+                                      </Label>
+                                      <ScrollPane prefHeight="350.0" prefWidth="125.0">
+                                          <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="300.0">
+                                                  <children>
+                                                      <VBox fx:id="mondayVbox" prefHeight="250.0" prefWidth="300.0" spacing="5.0">
+                                                          <padding>
+                                                              <Insets left="5.0" />
+                                                          </padding>
+                                                      </VBox>
+                                                  </children>
+                                              </AnchorPane>
+                                          </content>
+                                      </ScrollPane>
+                                      <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0">
+                                          <children>
+                                              <ProgressBar fx:id="monProgress" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
+                                              <Label fx:id="monProgressLabel">
+                                                  <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                  </HBox.margin>
+                                              </Label>
+                                          </children>
+                                      </HBox>
+                                  </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="125.0">
+                                  <children>
+                                      <Label text="- Tuesday -">
+                                          <font>
+                                              <Font name="System Bold" size="16.0" />
+                                          </font>
+                                      </Label>
+                                      <ScrollPane prefHeight="350.0" prefWidth="125.0">
+                                          <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="300.0">
+                                                  <children>
+                                                      <VBox fx:id="tuesdayVbox" prefHeight="250.0" prefWidth="300.0" spacing="5.0">
+                                                          <padding>
+                                                              <Insets left="5.0" />
+                                                          </padding>
+                                                      </VBox>
+                                                  </children>
+                                              </AnchorPane>
+                                          </content>
+                                      </ScrollPane>
+                                      <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0">
+                                          <children>
+                                              <ProgressBar fx:id="tuesProgress" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
+                                              <Label fx:id="tuesProgressLabel">
+                                                  <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                  </HBox.margin>
+                                              </Label>
+                                          </children>
+                                      </HBox>
+                                  </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="125.0">
+                                  <children>
+                                      <Label text="- Wednesday -">
+                                          <font>
+                                              <Font name="System Bold" size="16.0" />
+                                          </font>
+                                      </Label>
+                                      <ScrollPane prefHeight="350.0" prefWidth="125.0">
+                                          <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="300.0">
+                                                  <children>
+                                                      <VBox fx:id="wednesdayVbox" prefHeight="250.0" prefWidth="300.0" spacing="5.0">
+                                                          <padding>
+                                                              <Insets left="5.0" />
+                                                          </padding>
+                                                      </VBox>
+                                                  </children>
+                                              </AnchorPane>
+                                          </content>
+                                      </ScrollPane>
+                                      <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0">
+                                          <children>
+                                              <ProgressBar fx:id="wedProgress" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
+                                              <Label fx:id="wedProgressLabel">
+                                                  <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                  </HBox.margin>
+                                              </Label>
+                                          </children>
+                                      </HBox>
+                                  </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="125.0">
+                                  <children>
+                                      <Label text="- Thursday -">
+                                          <font>
+                                              <Font name="System Bold" size="16.0" />
+                                          </font>
+                                      </Label>
+                                      <ScrollPane prefHeight="350.0" prefWidth="125.0">
+                                          <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="300.0">
+                                                  <children>
+                                                      <VBox fx:id="thursdayVbox" prefHeight="250.0" prefWidth="300.0" spacing="5.0">
+                                                          <padding>
+                                                              <Insets left="5.0" />
+                                                          </padding>
+                                                      </VBox>
+                                                  </children>
+                                              </AnchorPane>
+                                          </content>
+                                      </ScrollPane>
+                                      <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0">
+                                          <children>
+                                              <ProgressBar fx:id="thursProgress" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
+                                              <Label fx:id="thursProgressLabel">
+                                                  <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                  </HBox.margin>
+                                              </Label>
+                                          </children>
+                                      </HBox>
+                                  </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="125.0">
+                                  <children>
+                                      <Label text="- Friday -">
+                                          <font>
+                                              <Font name="System Bold" size="16.0" />
+                                          </font>
+                                      </Label>
+                                      <ScrollPane prefHeight="350.0" prefWidth="125.0">
+                                          <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="300.0">
+                                                  <children>
+                                                      <VBox fx:id="fridayVbox" prefHeight="250.0" prefWidth="300.0" spacing="5.0">
+                                                          <padding>
+                                                              <Insets left="5.0" />
+                                                          </padding>
+                                                      </VBox>
+                                                  </children>
+                                              </AnchorPane>
+                                          </content>
+                                      </ScrollPane>
+                                      <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0">
+                                          <children>
+                                              <ProgressBar fx:id="friProgress" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
+                                              <Label fx:id="friProgressLabel">
+                                                  <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                  </HBox.margin>
+                                              </Label>
+                                          </children>
+                                      </HBox>
+                                  </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="125.0">
+                                  <children>
+                                      <Label text="- Saturday -">
+                                          <font>
+                                              <Font name="System Bold" size="16.0" />
+                                          </font>
+                                      </Label>
+                                      <ScrollPane prefHeight="350.0" prefWidth="125.0">
+                                          <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="300.0">
+                                                  <children>
+                                                      <VBox fx:id="saturdayVbox" prefHeight="250.0" prefWidth="300.0" spacing="5.0">
+                                                          <padding>
+                                                              <Insets left="5.0" />
+                                                          </padding>
+                                                      </VBox>
+                                                  </children>
+                                              </AnchorPane>
+                                          </content>
+                                      </ScrollPane>
+                                      <HBox alignment="CENTER" prefHeight="20.0" prefWidth="200.0">
+                                          <children>
+                                              <ProgressBar fx:id="satProgress" prefHeight="10.0" prefWidth="200.0" progress="0.0" />
+                                              <Label fx:id="satProgressLabel">
+                                                  <HBox.margin>
+                                                      <Insets left="5.0" />
+                                                  </HBox.margin>
+                                              </Label>
+                                          </children>
+                                      </HBox>
+                                  </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="125.0">
+                                  <children>
+                                      <Label text="Quotes &amp; Notes">
+                                          <font>
+                                              <Font name="System Bold" size="16.0" />
+                                          </font>
+                                      </Label>
+                                      <TextArea prefHeight="350.0" prefWidth="125.0">
+                                          <font>
+                                              <Font size="16.0" />
+                                          </font>
+                                      </TextArea>
+                                  </children>
+                              </VBox>
+                        </children>
+                    </HBox>
+                    <HBox prefHeight="100.0" prefWidth="200.0">
+                        <children>
+                            <Label text="Tasks Completed:">
+                                <HBox.margin>
+                                    <Insets left="5.0" />
+                                </HBox.margin>
+                            </Label>
+                            <Label alignment="CENTER">
+                                <HBox.margin>
+                                    <Insets left="3.0" />
+                                </HBox.margin>
+                            </Label>
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+        </children></AnchorPane>
+</Scene>

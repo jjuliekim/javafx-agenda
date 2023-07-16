@@ -1,0 +1,41 @@
+{
+  "name":"Bullet Journal",
+  "arguments":{
+                "weekName":"Weekly View",                  //Defined by user.
+                "weekStartDay":"SUNDAY",                   //Feature Section 4.WS
+                "daysLayout":"HORIZONTAL",                 //Feature Section 4.VL
+                "viewTheme":"DEFAULT",                     //Feature Section 2.Themes
+                "days":[
+                  {"events":[],"tasks":[]},
+                  {"events":[],
+                   "tasks":[
+                             {
+                               "name":"a",
+                               "description":"b",
+                               "dayOfWeek":"MONDAY",
+                               "completed":false,
+                               "category":"daily"          //unimplemented category
+                             }
+                           ]
+                  },
+                  {"events":[
+                              {
+                                "name":"e",
+                                "description":"e",
+                                "dayOfWeek":"TUESDAY",
+                                "startTime":"a",
+                                "duration":"a",
+                                "category":"weekly"        //unimplemented category
+                              }
+                            ],
+                   "tasks":[]},
+                  {"events":[],"tasks":[]},
+                  {"events":[],"tasks":[]},
+                  {"events":[],"tasks":[]},
+                  {"events":[],"tasks":[]}
+                ],
+                "quotes&Notes":"Nothing",                   //Feature Section 3.Q&N
+                "maxEvents":-1,
+                "maxTasks":-1                               //both from Feature Section 1.CW
+              }
+}
